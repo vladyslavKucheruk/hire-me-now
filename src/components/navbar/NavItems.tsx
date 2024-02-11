@@ -1,14 +1,24 @@
 "use client";
 
 import { EMPLOYEE_CATEGORIES } from "@/const";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { NavItem } from "./NavItem";
+import { useKeyboardHandler, useOnClickOutside } from "@/shared";
 
 export const NavItems = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const navBarRef = useRef<HTMLDivElement | null>(null);
+
+  useKeyboardHandler(navBarRef, "Escape", () => {
+    setActiveIndex(null);
+  });
+
+  useOnClickOutside(navBarRef, () => {
+    setActiveIndex(null);
+  });
 
   return (
-    <div className="h-full flex gap-4">
+    <div className="h-full flex gap-4" ref={navBarRef}>
       {EMPLOYEE_CATEGORIES.map((category, index) => {
         const isActive = activeIndex === index;
 
