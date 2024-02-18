@@ -36,7 +36,7 @@ export const NavItem = ({ category, isOpen, isAnyOpen, handleOpen }: Props) => {
 
       {isOpen ? (
         <div
-          className={cn("absolute inset-x-0 top-full text-muted-foreground", {
+          className={cn("absolute z-100 inset-x-0 top-full text-muted-foreground", {
             "animate-in fade-in-40 slide-in-from-top-5": !isAnyOpen,
           })}
         >
