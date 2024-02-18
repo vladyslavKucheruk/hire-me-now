@@ -4,7 +4,7 @@ import payload from "payload";
 import { type InitOptions } from "payload/config";
 
 env.config({
-  path: resolve(__dirname, "../.env"),
+  path: resolve(__dirname, "../../.env"),
 });
 
 let cached = (global as any).payload;
