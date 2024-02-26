@@ -12,18 +12,25 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SignUpFormValues, SignUpSchema } from "@/shared/validators";
 import { trpc } from "@/trpc-server/client";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const SignUpPage = () => {
+  const router = useRouter();
+
   const { register, handleSubmit, formState } = useForm<SignUpFormValues>({
     resolver: zodResolver(SignUpSchema),
   });
 
-  const { data } = trpc.health.useQuery();
-
-  console.log(data);
+  const { mutate, isLoading } = trpc.auth.signUp.useMutation({
+    onSuccess: () => {
+      toast.success("Account created");
+      router.replace(RoutesEnum.SIGN_IN);
+    },
+  });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    mutate(data);
   });
 
   return (
@@ -67,10 +74,13 @@ const SignUpPage = () => {
                     "focus-visible:ring-red-500": formState.errors.password?.message,
                   })}
                   placeholder="********"
+                  type="password"
                 />
               </div>
 
-              <Button type="submit">Sign up</Button>
+              <Button type="submit" disabled={isLoading}>
+                Create account
+              </Button>
             </div>
           </form>
         </div>
