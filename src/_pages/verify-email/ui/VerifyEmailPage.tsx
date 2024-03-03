@@ -1,3 +1,4 @@
+import { VerifyEmail } from "@/widgets/verify-email";
 import Image from "next/image";
 
 interface Props {
@@ -10,7 +11,9 @@ export const VerifyEmailPage = ({ email, token }: Props) => {
     <div className="container flex pt-20 flex-col items-center justify-center">
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         {token && typeof token === "string" ? (
-          <div className="grid gap-6"></div>
+          <div className="grid gap-6">
+            <VerifyEmail token={token} />
+          </div>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-2">
             <div className="relative rounded-xl overflow-hidden mb-4 h-60 w-60 text-muted-foreground z-0">

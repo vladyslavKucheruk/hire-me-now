@@ -3,7 +3,7 @@
 import { EMPLOYEE_CATEGORIES } from "@/const";
 import { useRef, useState } from "react";
 import { NavItem } from "./NavItem";
-import { useKeyboardHandler, useOnClickOutside } from "@/shared";
+import { useKeyboardHandler, useOnClickOutside } from "@/shared/hooks";
 
 export const NavItems = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

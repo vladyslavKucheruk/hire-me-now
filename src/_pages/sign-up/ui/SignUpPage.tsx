@@ -2,16 +2,14 @@
 
 import { RoutesEnum } from "@/app/Routes";
 import { Icons } from "@/components/Icons";
-import { Button, buttonVariants } from "@/shared";
-import { Input } from "@/shared/ui/input";
-import { Label } from "@/shared/ui/label";
+import { Button, buttonVariants, Input, Label } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { SignUpFormValues, SignUpSchema } from "../model/schema";
 import { useForm } from "react-hook-form";
 import { cn } from "@/lib/utils";
-import { useSignUpMutation } from "../api";
+import { useSignUpMutation } from "@/shared/api/auth";
 
 export const SignUpPage = () => {
   const { register, handleSubmit, formState } = useForm<SignUpFormValues>({

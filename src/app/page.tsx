@@ -1,8 +1,7 @@
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import Link from "next/link";
 import { RoutesEnum } from "./Routes";
-import { Button } from "@/shared/ui/button";
-import { buttonVariants } from "@/shared/ui/button";
+import { Button, buttonVariants } from "@/shared/ui";
 import { Star, Tag, Trophy } from "lucide-react";
 
 const perks = [

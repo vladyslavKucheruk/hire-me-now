@@ -3,9 +3,8 @@
 import { RoutesEnum } from "@/app/Routes";
 import { Icons } from "@/components/Icons";
 import { cn } from "@/lib/utils";
-import { Button, buttonVariants } from "@/shared";
-import { Input } from "@/shared/ui/input";
-import { Label } from "@/shared/ui/label";
+
+import { Input, Label, Button, buttonVariants } from "@/shared/ui";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";

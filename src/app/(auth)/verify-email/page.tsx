@@ -1,4 +1,4 @@
-import { VerifyEmailPage } from "@/pages/verify-email";
+import { VerifyEmailPage } from "@/_pages/verify-email";
 
 interface Props {
   searchParams: { [key: string]: string | string[] | undefined };

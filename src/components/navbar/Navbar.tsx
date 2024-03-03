@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MaxWidthWrapper } from "../MaxWidthWrapper";
 import { Icons } from "../Icons";
 import { NavItems } from "./NavItems";
-import { buttonVariants } from "@/shared/ui/button";
+import { buttonVariants } from "@/shared/ui";
 import { ConnectionsList } from "@/features";
 
 export const Navbar = () => {
