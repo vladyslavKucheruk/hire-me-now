@@ -53,6 +53,9 @@ export const SignUpPage = () => {
                   })}
                   placeholder="your-email@example.com"
                 />
+                {formState.errors.password?.message && (
+                  <p className="text-red-500 text-sm">{formState.errors.email?.message}</p>
+                )}
               </div>
 
               <div className="grid gap-1 py-2">
@@ -65,6 +68,9 @@ export const SignUpPage = () => {
                   placeholder="********"
                   type="password"
                 />
+                {formState.errors.password?.message && (
+                  <p className="text-red-500 text-sm">{formState.errors.password?.message}</p>
+                )}
               </div>
 
               <Button type="submit" disabled={isLoading}>
