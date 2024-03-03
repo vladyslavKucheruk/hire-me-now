@@ -2,8 +2,7 @@ import env from "dotenv";
 import { resolve } from "path";
 import payload, { Payload } from "payload";
 import { type InitOptions } from "payload/config";
-import nodemailer, { TransportOptions } from "nodemailer";
-import SMTPTransport from "nodemailer/lib/smtp-transport";
+import nodemailer from "nodemailer";
 
 env.config({
   path: resolve(__dirname, "../../.env"),
@@ -12,11 +11,6 @@ env.config({
 const mailTransport = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT),
-  secure: true,
-  auth: {
-    user: "resend",
-    pass: process.env.RESEND_API_KEY,
-  },
 });
 
 let cached = (global as any).payload;
@@ -45,8 +39,8 @@ export const getPayloadClient = async ({ initOptions }: Args = {}): Promise<Payl
     cached.promise = payload.init({
       email: {
         transport: mailTransport,
-        fromAddress: "bombardire54@gmail.com",
-        fromName: "Hire Me Now",
+        fromAddress: "support@hire-me-now.com",
+        fromName: "Hire Me Now Support",
       },
       secret: process.env.PAYLOAD_SECRET,
       local: initOptions?.express ? false : true,
