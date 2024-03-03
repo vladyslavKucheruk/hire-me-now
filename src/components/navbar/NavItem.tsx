@@ -1,7 +1,7 @@
 "use client";
 
 import { EMPLOYEE_CATEGORIES } from "@/const";
-import { Button } from "@/shared/ui/button";
+import { Button } from "@/shared/ui";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";

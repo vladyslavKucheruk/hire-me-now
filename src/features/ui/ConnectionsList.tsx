@@ -1,14 +1,14 @@
 import { RoutesEnum } from "@/app/Routes";
-import { buttonVariants } from "@/shared/ui/button";
-import { Separator } from "@/shared/ui/separator";
 import {
+  buttonVariants,
+  Separator,
   Sheet,
   SheetContent,
   SheetFooter,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/shared/ui/sheet";
+} from "@/shared/ui";
 import { LucidePlugZap, LucideUnplug } from "lucide-react";
 import Link from "next/link";
 
